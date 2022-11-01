@@ -1,32 +1,24 @@
 from fastapi import FastAPI, Query
 from pydantic import BaseModel
-import pymysql.cursors
+import Categorias
 
 
 app = FastAPI()
 
 
-connection = pymysql.connect(
-  host='localhost',
-  user='root',
-  password='',
-  database='integracionapi',
-  charset='utf8mb4',
-  cursorclass=pymysql.cursors.DictCursor
-)
+# connection = pymysql.connect(
+#   host='localhost', user='root', password='',
+#   database='integracionapi', charset='utf8mb4',
+#   cursorclass=pymysql.cursors.DictCursor
+# )
 
 
 # Categorias
 
 
 @app.get("/categorias/")
-async def traer_categorias():
-  with connection:
-    with connection.cursor() as cursor:
-      sql = "SELECT * FROM Categorias"
-      cursor.execute(sql)
-      result = cursor.fetchone()
-      return result
+def traer_categorias():
+  return Categorias.traer_categorias()
 
 
 # Productos
