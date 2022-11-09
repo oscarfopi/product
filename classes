@@ -1,0 +1,74 @@
+import os
+import time
+
+def print_optioins():
+    print("menu products")
+    print("*" * 30)
+    print("select option:")
+    print("[C]reate product")
+    print("[L]ist products")
+    print("[M]odify product")
+    print("[R]emove product")
+    print("[S]earch product")
+    print("[E]xit")
+
+def run():
+    print_options()
+
+    command = input()
+    command = command.upper()
+
+    if comman == "C":
+        pass
+    elif command == "L":
+        pass
+    elif command == "M":
+        pass
+    elif command == "R":
+        pass
+    elif command == "S":
+        pass
+    elif command == "E":
+        os._exit(1)
+    else:
+        print("Invalid Command")
+        time.sleep(1)
+        run()
+
+    if __name__ == "__main__":
+         run()
+
+import re
+import datetime
+
+regex_email = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+regex_phone = "^[0-9]{9}$"
+
+class Validations:
+
+    def __init__(self):
+        pass
+
+    def validateName(self, name):
+        if len(name) < 3 or len(name) > 20:
+            raise ValueError(f" The name must have a minimum of 3 characters and maximum of 20 characters, current size: {len(name)} ")
+        return True
+
+    def validatetype(self, type):
+        if not re.search(regex_type, type):
+            raise ValueError(f" Type format is invalid ")
+        return True
+
+
+    def validatePrice(self, price):
+        if not re.search(regex_price, price):
+            raise ValueError(f" price format is invalid, must have a minimum of 4 numbers and maximum of 20 numbers, without hyphens or dots ")
+        return True
+
+    def validateUnit(self, unit):
+        if len(unit) < 1 or len(type) > 999 :
+            raise ValueError(f" Unit must have a minimum of 1 numbers and maximum of 999 numbers, current size: {len(name)} ")
+        return True
+         
+      
+raise ValueError("Message custom with error")
